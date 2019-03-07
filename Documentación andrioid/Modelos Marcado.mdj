@@ -808,7 +808,7 @@
 								"$ref": "AAAAAAFpSOoLn6xng98="
 							},
 							"name": "estado",
-							"documentation": "Conocer si está en falta:\n1. Perfecto\n2. Algunos Retrasos(<x)\n3. Regular\n4. Varias Faltas(>x)\n5. Nunca ha asistido(0)",
+							"documentation": "Conocer si está en falta:\n1. Perfecto\n2. Algunos Retrasos(<x)\n3. Regular\n4. Varias Faltas(>x)\n5. Nunca ha asistido(0)\n6. De Permiso",
 							"type": "INTEGER",
 							"length": 0
 						},
@@ -862,7 +862,7 @@
 								"$ref": "AAAAAAFpSOoqTqx09Go="
 							},
 							"name": "dia",
-							"documentation": "1. Lunes\n2. Martes\n3. Miércoles\n4. Jueves\n5. Viernes\n6. Sábado\n7. Domingo",
+							"documentation": "0. Domingo\n1. Lunes\n2. Martes\n3. Miércoles\n4. Jueves\n5. Viernes\n6. Sábado",
 							"type": "INTEGER",
 							"length": 0
 						},
@@ -946,7 +946,7 @@
 								"$ref": "AAAAAAFpSOpEqKyBAwQ="
 							},
 							"name": "estado",
-							"documentation": "1. Temprano\n2. A tiempo\n3. Tarde\n4. Falta",
+							"documentation": "1. Temprano\n2. A tiempo\n3. Tarde\n4. Falta Quedarse\n5. Falta\n6. Salida Temprano\n7. Salida Tarde\n8. Permiso",
 							"type": "INT",
 							"length": 0
 						},
