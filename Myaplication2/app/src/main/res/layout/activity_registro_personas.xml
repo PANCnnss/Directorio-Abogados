@@ -137,19 +137,18 @@
         app:layout_constraintVertical_bias="0.688" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/bcreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:text="Create"
         android:textColor="@color/Colorletrabtn"
         android:textSize="18sp"
+
         app:fontFamily="@font/baloo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -159,20 +158,19 @@
         app:layout_constraintVertical_bias="0.817" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/bback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/Colorbtn"
         android:text="Back"
-        app:fontFamily="@font/baloo"
         android:textColor="@color/Colorletrabtn"
         android:textSize="18sp"
+        app:fontFamily="@font/baloo"
+        android:onClick="back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
@@ -181,14 +179,12 @@
         app:layout_constraintVertical_bias="0.97" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/tfpass"
         android:layout_width="232dp"
         android:layout_height="41dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:ems="10"
@@ -201,7 +197,7 @@
         app:layout_constraintVertical_bias="0.556" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/tfrepass"
         android:layout_width="233dp"
         android:layout_height="44dp"
         android:layout_marginStart="8dp"
@@ -221,14 +217,12 @@
         app:layout_constraintVertical_bias="0.66" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/tfcorreo"
         android:layout_width="234dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:ems="10"
@@ -241,14 +235,12 @@
         app:layout_constraintVertical_bias="0.461" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/tfnom"
         android:layout_width="239dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:ems="10"
@@ -262,14 +254,12 @@
         app:layout_constraintVertical_bias="0.246" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/tfape"
         android:layout_width="240dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:ems="10"
