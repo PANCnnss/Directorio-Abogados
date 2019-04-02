@@ -9,8 +9,9 @@
         android:id="@+id/btinvitado"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/Colorbtn"
         android:text="Invited"
@@ -18,16 +19,17 @@
         android:textColor="@color/Colorletrabtn"
         app:fontFamily="@font/baloo"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnregistrar"
-        app:layout_constraintVertical_bias="0.294" />
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
     <Button
         android:id="@+id/btnregistrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/Colorbtn"
@@ -37,23 +39,22 @@
         app:fontFamily="@font/baloo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.758"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/g"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="256dp"
         android:layout_height="198dp"
         android:layout_marginTop="16dp"
+        android:src="@drawable/logo_transparent"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.587"
 
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@mipmap/logo_transparent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/g"
@@ -78,7 +79,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="62dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:ems="8"
@@ -88,7 +88,7 @@
         android:textColorHint="@color/ColorLinea"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.414"
+        app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -96,18 +96,17 @@
         android:id="@+id/button5"
         android:layout_width="110dp"
         android:layout_height="48dp"
-        android:layout_marginStart="133dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:text="Log in"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="@color/Colorletrabtn"
         app:fontFamily="@font/baloo"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btinvitado"
-        app:layout_constraintTop_toBottomOf="@+id/btnregistrar" />
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/g" />
 
 </android.support.constraint.ConstraintLayout>
