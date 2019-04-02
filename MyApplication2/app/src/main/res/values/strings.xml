@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Conversor De Divisas</string>
+    <string name="tituke">Seleccione la divisa </string>
+    <string name="sd">De Soles a Dolares</string>
+    <string name="ds">De Dolares a Soles</string>
+    <string name="b">Convierte</string>
+</resources>
