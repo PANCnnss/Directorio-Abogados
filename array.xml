@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ramas">
+        <item> Ramas...</item>
+        <item> Derecho administrativo </item>
+        <item> Derecho  civil </item>
+        <item> Derecho de familia </item>
+        <item> Derecho laboral </item>
+        <item> Derecho mercantil </item>
+        <item> Derecho penal </item>
+    </string-array>
+</resources>
