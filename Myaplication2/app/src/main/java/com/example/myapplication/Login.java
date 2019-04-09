@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class Login extends AppCompatActivity {
 
     EditText v;
+    FirebaseFirestore db=FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +21,9 @@ public class Login extends AppCompatActivity {
     }
 
     protected  void Registrar(View a){
+
+        /*
        Intent i = new Intent(this,RegistroPersonas.class);
-       startActivity(i);
+       startActivity(i);*/
     }
 }

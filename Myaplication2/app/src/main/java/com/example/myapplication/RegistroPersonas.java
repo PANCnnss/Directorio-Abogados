@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,5 +39,8 @@ public class RegistroPersonas extends AppCompatActivity {
 
         }
         return true;
+    }
+    protected void regAbogados(View v){
+        startActivity(new Intent(this,Registrar_Abogados.class));
     }
 }
