@@ -17,10 +17,10 @@
         android:textColor="@color/Colorletrabtn"
         app:fontFamily="@font/baloo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
+        app:layout_constraintTop_toBottomOf="@+id/btsignin" />
 
     <Button
-        android:id="@+id/btnregistrar"
+        android:id="@+id/btregistrar"
         android:layout_width="202dp"
         android:layout_height="65dp"
         android:layout_marginEnd="8dp"
@@ -32,7 +32,7 @@
         app:fontFamily="@font/baloo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btinvitado"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
+        app:layout_constraintTop_toBottomOf="@+id/btsignin" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/pass"
+        android:id="@+id/etcontra"
         android:layout_width="394dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -63,10 +63,10 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user" />
+        app:layout_constraintTop_toBottomOf="@+id/etuser" />
 
     <EditText
-        android:id="@+id/user"
+        android:id="@+id/etuser"
         android:layout_width="397dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -84,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/btsignin"
         android:layout_width="409dp"
         android:layout_height="79dp"
         android:layout_marginTop="12dp"
@@ -97,6 +97,6 @@
         app:fontFamily="@font/baloo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass" />
+        app:layout_constraintTop_toBottomOf="@+id/etcontra" />
 
 </android.support.constraint.ConstraintLayout>

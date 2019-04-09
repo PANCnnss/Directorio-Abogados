@@ -1,44 +1,139 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class Login extends AppCompatActivity {
 
+public class Login extends AppCompatActivity {
+    private FirebaseAnalytics mFirebaseAnalytics;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private static final String TAG="Main_act";
+    Button btsignin, btsignup;
+    EditText edtcorr, edtcontra;
+    TextView tvestado;
+    Bundle bundle;
+    private String corr, contra;
+    @SuppressLint("MissingPermission")
     EditText v;
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        v=(EditText)findViewById(R.id.user);
-        v.requestFocus();
+        btsignin = findViewById(R.id.btsignin);
+        btsignup = findViewById(R.id.btregistrar);
+        edtcontra = findViewById(R.id.etcontra);
+        edtcorr = findViewById(R.id.etuser);
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if(user!=null) Log.d(TAG,"Logeado " + user.getUid());
+                else Log.d(TAG,"NO logeado");
+            }
+        };
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        bundle = new Bundle();
+
+        btsignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bundle.putString(FirebaseAnalytics.Param.ITEM_ID,String.valueOf(v.getId())); //google analytics, 1 day delay
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT,bundle);
+                signin();
+            }
+        });
+
+        btsignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bundle.putString(FirebaseAnalytics.Param.ITEM_ID,String.valueOf(v.getId()));
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT,bundle);
+                createUser();
+            }
+        });
     }
-    protected  void login(View v){
-        Toast.makeText(this,"ABRIÓ",Toast.LENGTH_LONG).show();
-        Cliente cliente= new Cliente("1","jeanp@gmail.com","123456","Jean","Tello");
-        db.collection("Cliente").document("jeanpi").set(cliente)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(Login.this,"Rgistrado Correctamente",Toast.LENGTH_LONG).show();
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //Si ha accedido actualizar la vista
+    }
+
+    private void createUser(){
+        if(wrongFields()) {toastMsg("Datos Incorrectos ("+ corr + "," + contra + ")",1); return;};
+        mAuth.createUserWithEmailAndPassword(corr,contra).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()) toastMsg("Se creó el usuario");
+                else toastMsg("No se pudo crear usuario");
+            }
+        });
+    }
+    private void signin(){
+        if(wrongFields()) {toastMsg("Datos Incorrectos ("+ corr + "," + contra + ")",1); return;};
+        Log.d(TAG,"Valores: " + corr + "," + contra);
+        mAuth.signInWithEmailAndPassword(corr,contra).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    toastMsg("Inicio de sesión exitoso");
+                    InicioSesion();
                 }
-                });
-        Toast.makeText(this,"Cosas",Toast.LENGTH_LONG).show();
+                else toastMsg("No se pudo iniciar sesión");
+            }
+        });
     }
+
+    private boolean wrongFields(){ //verificación de campos
+        corr = edtcorr.getText().toString();
+        contra = edtcontra.getText().toString();
+        if(corr == null || corr.equals("") || corr.length() < 8) {
+            toastMsg("Correo Vacío"); return true;}
+        if(contra == null || contra.equals("") || corr.length() < 8) {
+            toastMsg("Contraseña Vacía"); return true;}
+
+        return false;
+    }
+
+    private void toastMsg(String msg){
+        Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
+    }
+    private void toastMsg(String msg, int len){
+        if(len!=0 && len!=1) len=0;
+        Toast.makeText(getApplicationContext(),msg,len).show();
+    }
+
     protected  void Registrar(View a){
        Intent i = new Intent(this,RegistroPersonas.class);
        startActivity(i);
+    }
+    protected void InicioSesion(){
+        Intent i = new Intent(this,MainActivity.class);
+        startActivity(i);
     }
 }
