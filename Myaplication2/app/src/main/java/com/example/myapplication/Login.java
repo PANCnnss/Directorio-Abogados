@@ -28,21 +28,14 @@ public class Login extends AppCompatActivity {
     protected  void login(View v){
         Toast.makeText(this,"ABRIÓ",Toast.LENGTH_LONG).show();
         Cliente cliente= new Cliente("1","jeanp@gmail.com","123456","Jean","Tello");
-
-        db.collection("Abogados")
-                .add(cliente)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        db.collection("Cliente").document("jeanpi").set(cliente)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(Login.this,"Registrado",Toast.LENGTH_LONG).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                    }
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(Login.this,"Rgistrado Correctamente",Toast.LENGTH_LONG).show();
+                }
                 });
+        Toast.makeText(this,"Cosas",Toast.LENGTH_LONG).show();
     }
     protected  void Registrar(View a){
        Intent i = new Intent(this,RegistroPersonas.class);
