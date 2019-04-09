@@ -42,7 +42,6 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         btsignin = findViewById(R.id.btsignin);
-        btsignup = findViewById(R.id.btregistrar);
         edtcontra = findViewById(R.id.etcontra);
         edtcorr = findViewById(R.id.etuser);
 
@@ -67,14 +66,6 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        btsignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bundle.putString(FirebaseAnalytics.Param.ITEM_ID,String.valueOf(v.getId()));
-                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT,bundle);
-                createUser();
-            }
-        });
     }
 
     @Override
