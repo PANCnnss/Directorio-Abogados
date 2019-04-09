@@ -9,54 +9,67 @@
         android:id="@+id/btinvitado"
         android:layout_width="203dp"
         android:layout_height="64dp"
+        android:layout_marginTop="1dp"
         android:backgroundTint="@color/Colorbtn"
         android:text="Invited"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="@color/Colorletrabtn"
         app:fontFamily="@font/baloo"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="522dp" />
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/btnregistrar"
         android:layout_width="202dp"
         android:layout_height="65dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="@color/Colorbtn"
         android:onClick="Registrar"
         android:text="Sing up"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="@color/Colorletrabtn"
         app:fontFamily="@font/baloo"
-        tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="521dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="329dp"
         android:layout_height="293dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+
+        android:layout_marginEnd="8dp"
         android:src="@drawable/logo_transparent"
         android:visibility="visible"
-
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/pass"
         android:layout_width="394dp"
         android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:ems="8"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColorHint="@color/ColorLinea"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="379dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user" />
 
     <EditText
         android:id="@+id/user"
         android:layout_width="397dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:ems="8"
         android:hint="User"
@@ -64,19 +77,21 @@
         android:singleLine="false"
         android:textColorHint="@color/ColorLinea"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="325dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/login"
         android:layout_width="409dp"
         android:layout_height="79dp"
+        android:layout_marginTop="13dp"
         android:backgroundTint="@color/ColorLinea"
         android:text="Log in"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="@color/Colorletrabtn"
         app:fontFamily="@font/baloo"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="442dp" />
+        app:layout_constraintTop_toBottomOf="@+id/pass"
+        tools:layout_editor_absoluteX="1dp" />
 
 </android.support.constraint.ConstraintLayout>

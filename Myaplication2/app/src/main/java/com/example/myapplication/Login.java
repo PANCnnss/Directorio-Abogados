@@ -22,6 +22,7 @@ public class Login extends AppCompatActivity {
 
     protected  void Registrar(View a){
 
+
         /*
        Intent i = new Intent(this,RegistroPersonas.class);
        startActivity(i);*/
