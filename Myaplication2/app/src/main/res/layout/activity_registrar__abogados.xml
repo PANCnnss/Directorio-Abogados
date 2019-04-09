@@ -122,7 +122,6 @@
         android:layout_height="0dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="40dp"
         android:text="Fecha de Nacimiento:"
         android:textColor="@color/colorPrimary"
         android:textSize="18dp"
@@ -137,7 +136,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="7dp"
-        android:layout_marginBottom="294dp"
+        android:layout_marginBottom="422dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText2"
@@ -153,21 +152,21 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557" />
+        app:layout_constraintVertical_bias="0.454" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="136dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="81dp"
         android:text="Button"
         app:fontFamily="@font/GoogleSans"
         app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <TextView
@@ -181,10 +180,10 @@
         android:textSize="18dp"
         app:fontFamily="@font/GoogleSans"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/editText4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintVertical_bias="0.454" />
 
     <TextView
         android:id="@+id/textView21"
@@ -192,13 +191,13 @@
         android:layout_height="0dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="76dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="53dp"
         android:text="Fijo:"
         android:textColor="@color/colorPrimary"
         android:textSize="18dp"
         app:fontFamily="@font/GoogleSans"
         app:layout_constraintBottom_toTopOf="@+id/textView22"
-        app:layout_constraintEnd_toStartOf="@+id/editText4"
+        app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -206,14 +205,14 @@
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="7dp"
         android:text="Informacion de Cuenta"
         android:textColor="@color/colorAccent"
         android:textSize="15dp"
         app:fontFamily="@font/GoogleSans"
         app:layout_constraintBottom_toTopOf="@+id/textView23"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView20"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <TextView
@@ -275,7 +274,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="89dp"
+        android:layout_marginBottom="216dp"
         android:text="R. Contraseña:"
         android:textColor="@color/colorPrimary"
         android:textSize="18dp"
@@ -290,7 +289,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="34dp"
-        android:layout_marginBottom="89dp"
+        android:layout_marginBottom="216dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -305,7 +304,6 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="28dp"
         android:text="> Next"
-
         app:fontFamily="@font/GoogleSans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
