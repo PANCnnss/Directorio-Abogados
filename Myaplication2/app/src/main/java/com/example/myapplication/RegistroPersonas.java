@@ -64,6 +64,7 @@ public class RegistroPersonas extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     toastMsg("Se creó el usuario");
+                    finish();
                     tomainAct();
                 }
                 else toastMsg("No se pudo crear usuario");

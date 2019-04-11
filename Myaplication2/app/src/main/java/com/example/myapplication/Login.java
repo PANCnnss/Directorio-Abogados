@@ -65,6 +65,7 @@ public class Login extends AppCompatActivity {
                 signin();
             }
         });
+        edtcorr.requestFocus();
     }
 
     @Override
@@ -128,7 +129,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void toRegPersAct(View view) {
-        Intent i = new Intent(this,RegistroPersonas.class);
+        Intent i = new Intent(this,MainActivity.class);
         startActivity(i);
     }
 }
