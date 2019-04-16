@@ -188,7 +188,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/Colorbtn"
-        android:onClick="regAbogados"
+        android:onClick="toRegAct"
         android:text="Registro\nAbogados"
         android:textColor="@color/Colorletrabtn"
         android:textSize="18sp"

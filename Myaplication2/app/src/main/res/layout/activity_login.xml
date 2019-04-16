@@ -5,39 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btinvitado"
-        android:layout_width="203dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="1dp"
-        android:backgroundTint="@color/Colorbtn"
-        android:text="Invited"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textColor="@color/Colorletrabtn"
-        app:fontFamily="@font/baloo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btsignin" />
-
-    <Button
-        android:id="@+id/btregistrar"
-        android:layout_width="202dp"
-        android:layout_height="65dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="@color/Colorbtn"
-        android:onClick="Registrar"
-        android:text="Sing up"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textColor="@color/Colorletrabtn"
-        app:fontFamily="@font/baloo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btinvitado"
-        app:layout_constraintTop_toBottomOf="@+id/btsignin" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="329dp"
-        android:layout_height="293dp"
+        android:layout_width="227dp"
+        android:layout_height="217dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
 
@@ -53,7 +25,7 @@
         android:layout_width="394dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:ems="8"
@@ -62,6 +34,7 @@
         android:textColorHint="@color/ColorLinea"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etuser" />
 
@@ -70,7 +43,6 @@
         android:layout_width="397dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:ems="8"
@@ -80,14 +52,15 @@
         android:textColorHint="@color/ColorLinea"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/btsignin"
-        android:layout_width="409dp"
+        android:layout_width="237dp"
         android:layout_height="79dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/ColorLinea"
         android:onClick="login"
@@ -96,7 +69,40 @@
         android:textColor="@color/Colorletrabtn"
         app:fontFamily="@font/baloo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etcontra" />
+
+    <Button
+        android:id="@+id/btinvitado"
+        android:layout_width="172dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="@color/Colorbtn"
+        android:onClick="toRegPersAct"
+        android:text="Invited"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/Colorletrabtn"
+        app:fontFamily="@font/baloo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btsignin" />
+
+    <Button
+        android:id="@+id/btregistrar"
+        android:layout_width="168dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/Colorbtn"
+        android:onClick="Registrar"
+        android:text="Sing up"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/Colorletrabtn"
+        app:fontFamily="@font/baloo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.654"
+        app:layout_constraintStart_toEndOf="@+id/btinvitado"
+        app:layout_constraintTop_toBottomOf="@+id/btsignin" />
 
 </android.support.constraint.ConstraintLayout>

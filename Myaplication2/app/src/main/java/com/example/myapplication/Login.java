@@ -69,7 +69,7 @@ public class Login extends AppCompatActivity {
                 signin();
             }
         });
-
+        edtcorr.requestFocus();
     }
 
     @Override
@@ -114,10 +114,10 @@ public class Login extends AppCompatActivity {
         corr = edtcorr.getText().toString();
         contra = edtcontra.getText().toString();
         if(corr == null || corr.equals("") || corr.length() < 8) {
-            toastMsg("Correo Vacío"); return true;}
+            if(corr.length()<8) toastMsg("Correo demasiado corto");
+            else toastMsg("Correo Vacío"); return true;}
         if(contra == null || contra.equals("") || corr.length() < 8) {
             toastMsg("Contraseña Vacía"); return true;}
-
         return false;
     }
 
@@ -134,6 +134,11 @@ public class Login extends AppCompatActivity {
        startActivity(i);
     }
     protected void InicioSesion(){
+        Intent i = new Intent(this,MainActivity.class);
+        startActivity(i);
+    }
+
+    public void toRegPersAct(View view) {
         Intent i = new Intent(this,MainActivity.class);
         startActivity(i);
     }
