@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class Login extends AppCompatActivity {
+    private ProgressDialog pb;
     private FirebaseAnalytics mFirebaseAnalytics;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
@@ -39,6 +41,7 @@ public class Login extends AppCompatActivity {
     FirebaseFirestore db=FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         btsignin = findViewById(R.id.btsignin);
@@ -46,6 +49,7 @@ public class Login extends AppCompatActivity {
         edtcorr = findViewById(R.id.etuser);
 
         mAuth = FirebaseAuth.getInstance();
+        pb = new ProgressDialog(this);
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -86,16 +90,22 @@ public class Login extends AppCompatActivity {
         });
     }
     private void signin(){
-        if(wrongFields()) {toastMsg("Datos Incorrectos ("+ corr + "," + contra + ")",1); return;};
+
+        if(wrongFields()) {return;};
+        pb.setMessage("Iniciando Sesión");
+        pb.show();
         Log.d(TAG,"Valores: " + corr + "," + contra);
         mAuth.signInWithEmailAndPassword(corr,contra).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     toastMsg("Inicio de sesión exitoso");
+
                     InicioSesion();
+
                 }
                 else toastMsg("No se pudo iniciar sesión");
+                pb.dismiss();
             }
         });
     }
