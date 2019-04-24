@@ -3,28 +3,28 @@ package com.example.myapplication;
 import java.util.Date;
 
 public class Guardado {
-    private int cliente, abogado;
+    private String cliente, abogado;
     private Date fecha;
 
-    public Guardado(int cliente, int abogado, Date fecha) {
+    public Guardado(String cliente, String abogado, Date fecha) {
         this.cliente = cliente;
         this.abogado = abogado;
         this.fecha = fecha;
     }
 
-    public int getCliente() {
+    public String getCliente() {
         return cliente;
     }
 
-    public void setCliente(int cliente) {
+    public void setCliente(String cliente) {
         this.cliente = cliente;
     }
 
-    public int getAbogado() {
+    public String getAbogado() {
         return abogado;
     }
 
-    public void setAbogado(int abogado) {
+    public void setAbogado(String abogado) {
         this.abogado = abogado;
     }
 
@@ -35,4 +35,14 @@ public class Guardado {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    @Override
+    public String toString() {
+        return "Guardado{" +
+                "cliente='" + cliente + '\'' +
+                ", abogado='" + abogado + '\'' +
+                ", fecha=" + fecha +
+                '}';
+    }
 }
+

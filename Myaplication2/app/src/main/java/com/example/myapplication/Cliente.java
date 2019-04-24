@@ -1,12 +1,11 @@
-package com.example.myapplication;
+    package com.example.myapplication;
 
 public class Cliente {
-    private String id, correo, password, nombre, apellido;
+    private String id, correo, nombre, apellido;
 
-    public Cliente(String id, String correo, String password, String nombre, String apellido) {
+    public Cliente(String id, String correo, String nombre, String apellido) {
         this.id = id;
         this.correo = correo;
-        this.password = password;
         this.nombre = nombre;
         this.apellido = apellido;
     }
@@ -25,14 +24,6 @@ public class Cliente {
 
     public void setCorreo(String correo) {
         this.correo = correo;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getNombre() {
@@ -56,7 +47,6 @@ public class Cliente {
         return "Cliente{" +
                 "id='" + id + '\'' +
                 ", correo='" + correo + '\'' +
-                ", password='" + password + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 '}';
