@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Directorio Abogados</string>
+    <string name="nombre">Nombre(s)</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="correo">Correo</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="fecn">Fecha de nacimiento</string>
+    <string name="tel">Teléfono</string>
+    <string name="cel">Celular</string>
+    <string name="repass">Repetir Contraseña</string>
+    <string name="registrar">REGISTRAR</string>
+    <string name="infop">Información Personal</string>
+    <string name="infocuenta">Información de Cuenta</string>
+    <string name="siguiente">SIGUIENTE</string>
+    <string name="infoprof">Información Profesional</string>
+    <string name="ramap">Rama Principal</string>
+    <string name="ramas">Rama Secundaria</string>
+    <string name="idioma">Idiomas</string>
+    <string name="numesc">Numero de Escuela</string>
+    <string name="desc">Descripción</string>
+    <string name="dir">Dirección</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="web">Página web</string>
+    <string name="selecImg">Seleccionar Imagen</string>
 </resources>

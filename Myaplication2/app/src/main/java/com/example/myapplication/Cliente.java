@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
     private String id, correo, password, nombre, apellido;
 
     public Cliente(String id, String correo, String password, String nombre, String apellido) {

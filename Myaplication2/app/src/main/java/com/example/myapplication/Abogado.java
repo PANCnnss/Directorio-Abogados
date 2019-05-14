@@ -1,8 +1,9 @@
 package com.example.myapplication;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Abogado {
+public class Abogado  implements Serializable {
     private int id, veces_visto, peso;
     private String nombre, apellido, correo, telefono, password;
     private String rama1, rama2, otras_ramas, nro_colegio, fijo, ciudad;

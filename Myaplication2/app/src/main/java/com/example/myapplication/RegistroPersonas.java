@@ -1,9 +1,12 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,18 +17,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.concurrent.Executor;
+
 public class RegistroPersonas extends AppCompatActivity {
-    EditText tfnom,tfapelli,tfcorreo,tfpass,tfrepass;
+    TextInputLayout tfnom,tfapelli,tfcorreo,tfpass,tfrepass;
     private FirebaseAnalytics mFirebaseAnalytics;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
+    ProgressDialog pd;
     private static final String TAG="Main_act";
+    Cliente cregistro;
     Button btsignup;
     EditText edtcorr, edtcontra;
     TextView tvestado;
@@ -38,10 +47,10 @@ public class RegistroPersonas extends AppCompatActivity {
         setContentView(R.layout.activity_registro_personas);
         tfnom = findViewById(R.id.tfnom);
         tfnom.requestFocus();
-        tfapelli = findViewById(R.id.tfape);
-        tfcorreo = findViewById(R.id.tfcorreo);
-        tfpass = findViewById(R.id.tfpass);
-        tfrepass = findViewById(R.id.tfrepass);
+        tfapelli = ((TextInputLayout)findViewById(R.id.tfape));
+        tfcorreo =((TextInputLayout) findViewById(R.id.tfcor));
+        tfpass = ((TextInputLayout)findViewById(R.id.tfpas));
+        tfrepass = (TextInputLayout)findViewById(R.id.tfrpa);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -63,25 +72,26 @@ public class RegistroPersonas extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    toastMsg("Se creó el usuario");
-                    finish();
-                    tomainAct();
+                    Task<Void> res=FireStore.registrar(RegistroPersonas.this, cregistro, "Clientes",corr,pd);
+                    regDatosAdicio(res);                }
+                else {
+                    pd.dismiss();
+                    toastMsg("No se pudo crear usuario");
                 }
-                else toastMsg("No se pudo crear usuario");
             }
         });
     }
     private boolean validar(){
-        corr = tfcorreo.getText().toString();
-        contra = tfrepass.getText().toString();
-        EditText[]ar={tfnom,tfapelli,tfcorreo,tfpass,tfrepass};
+        corr = tfcorreo.getEditText().getText().toString();
+        contra = tfrepass.getEditText().getText().toString();
+        EditText[]ar={tfnom.getEditText(),tfapelli.getEditText(),tfcorreo.getEditText(),tfpass.getEditText(),tfrepass.getEditText()};
         for (EditText aux:ar){
             if (aux.getText().length()==0){
                 Toast.makeText(this, "COMPLETE TODOS LOS CAMPOS", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }
-        if(tfpass.getText().equals(tfrepass.getText())){
+        if(tfpass.getEditText().getText().equals(tfrepass.getEditText().getText())){
             toastMsg("Contraseñas nos coinciden");
             return false;
         }
@@ -111,10 +121,27 @@ public class RegistroPersonas extends AppCompatActivity {
 
     public void registrar(View view) {
         if (!validar()) return;
-        ProgressDialog pd = new ProgressDialog(this);
+        pd= new ProgressDialog(this);
         pd.setMessage("Creando Usuario");
         pd.show();
-        FireStore.registrar(this, new Cliente(corr,corr,contra,tfnom.getText().toString(),tfapelli.getText().toString()), "Clientes",corr,pd);
+        cregistro=new Cliente(corr,corr,contra,tfnom.getEditText().getText().toString(),tfapelli.getEditText().getText().toString());
         createUser();
+            }
+
+    private void regDatosAdicio(Task<Void>res){
+        res.addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    toastMsg("Usuario Registrado Correctamente");
+                    finish();
+                    tomainAct();
+                }
+                else{
+                    toastMsg("Ocurrió un error, intente nuevamente");
+                    pd.dismiss();
+                }
+            }
+        });
     }
 }
