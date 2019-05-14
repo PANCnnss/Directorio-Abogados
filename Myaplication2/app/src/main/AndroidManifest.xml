@@ -3,7 +3,10 @@
     package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 15c8038bb003dc18361fdbe6b219abf853318f2f
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

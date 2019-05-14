@@ -3,41 +3,42 @@ package com.example.myapplication;
 import java.util.Date;
 
 public class Comentario {
-    private int idCliente, idAbogado, calificación;
+    private String idCliente, idAbogado;
+    private int calificacion;
     private String coment, rama;
     private Date fecha;
 
-    public Comentario(int idCliente, int idAbogado, int calificación, String coment, String rama, Date fecha) {
+    public Comentario(String idCliente, String idAbogado, int calificación, String coment, String rama, Date fecha) {
         this.idCliente = idCliente;
         this.idAbogado = idAbogado;
-        this.calificación = calificación;
+        this.calificacion = calificación;
         this.coment = coment;
         this.rama = rama;
         this.fecha = fecha;
     }
 
-    public int getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(int idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 
-    public int getIdAbogado() {
+    public String getIdAbogado() {
         return idAbogado;
     }
 
-    public void setIdAbogado(int idAbogado) {
+    public void setIdAbogado(String idAbogado) {
         this.idAbogado = idAbogado;
     }
 
     public int getCalificación() {
-        return calificación;
+        return calificacion;
     }
 
     public void setCalificación(int calificación) {
-        this.calificación = calificación;
+        this.calificacion = calificación;
     }
 
     public String getComent() {
@@ -67,9 +68,9 @@ public class Comentario {
     @Override
     public String toString() {
         return "Comentario{" +
-                "idCliente=" + idCliente +
-                ", idAbogado=" + idAbogado +
-                ", calificación=" + calificación +
+                "idCliente='" + idCliente + '\'' +
+                ", idAbogado='" + idAbogado + '\'' +
+                ", calificación=" + calificacion +
                 ", coment='" + coment + '\'' +
                 ", rama='" + rama + '\'' +
                 ", fecha=" + fecha +

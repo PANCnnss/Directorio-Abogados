@@ -1,14 +1,18 @@
-package com.example.myapplication;
+    package com.example.myapplication;
 
+<<<<<<< HEAD
 import java.io.Serializable;
 
 public class Cliente implements Serializable {
     private String id, correo, password, nombre, apellido;
+=======
+public class Cliente {
+    private String id, correo, nombre, apellido;
+>>>>>>> 15c8038bb003dc18361fdbe6b219abf853318f2f
 
-    public Cliente(String id, String correo, String password, String nombre, String apellido) {
+    public Cliente(String id, String correo, String nombre, String apellido) {
         this.id = id;
         this.correo = correo;
-        this.password = password;
         this.nombre = nombre;
         this.apellido = apellido;
     }
@@ -27,14 +31,6 @@ public class Cliente implements Serializable {
 
     public void setCorreo(String correo) {
         this.correo = correo;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getNombre() {
@@ -58,7 +54,6 @@ public class Cliente implements Serializable {
         return "Cliente{" +
                 "id='" + id + '\'' +
                 ", correo='" + correo + '\'' +
-                ", password='" + password + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 '}';

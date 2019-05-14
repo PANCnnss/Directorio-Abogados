@@ -1,4 +1,5 @@
 package com.example.myapplication;
+<<<<<<< HEAD
 
 import java.io.Serializable;
 import java.util.Date;
@@ -6,21 +7,27 @@ import java.util.Date;
 public class Abogado  implements Serializable {
     private int id, veces_visto, peso;
     private String nombre, apellido, correo, telefono, password;
+=======
+import java.util.Date;
+
+public class Abogado {
+    private int veces_visto, peso;
+    private String id, nombre, apellido, correo, telefono;
+>>>>>>> 15c8038bb003dc18361fdbe6b219abf853318f2f
     private String rama1, rama2, otras_ramas, nro_colegio, fijo, ciudad;
-    private String descripcion, idiomas, paginaw, numopi;
-    private float calificacion;
+    private String descripcion, idiomas, paginaw;
+    private float calificacion, numopi;
     private boolean verificado;
     private Date fechanac;
 
-    public Abogado(int id, int veces_visto, int peso, String nombre, String apellido, String correo, String telefono, String password, String rama1, String rama2, String otras_ramas, String nro_colegio, String fijo, String ciudad, String descripcion, String idiomas, String paginaw, String numopi, float calificacion, boolean verificado, Date fechanac) {
-        this.id = id;
+    public Abogado(int veces_visto, int peso, String id, String nombre, String apellido, String correo, String telefono, String rama1, String rama2, String otras_ramas, String nro_colegio, String fijo, String ciudad, String descripcion, String idiomas, String paginaw, float calificacion, float numopi, boolean verificado, Date fechanac) {
         this.veces_visto = veces_visto;
         this.peso = peso;
+        this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.telefono = telefono;
-        this.password = password;
         this.rama1 = rama1;
         this.rama2 = rama2;
         this.otras_ramas = otras_ramas;
@@ -30,37 +37,10 @@ public class Abogado  implements Serializable {
         this.descripcion = descripcion;
         this.idiomas = idiomas;
         this.paginaw = paginaw;
-        this.numopi = numopi;
         this.calificacion = calificacion;
+        this.numopi = numopi;
         this.verificado = verificado;
         this.fechanac = fechanac;
-    }
-
-    public Abogado(int id, int veces_visto, int peso, String nombre, String apellido, String correo, String telefono, String password, String rama1, String nro_colegio, String ciudad, String descripcion, String numopi, float calificacion, boolean verificado, Date fechanac) {
-        this.id = id;
-        this.veces_visto = veces_visto;
-        this.peso = peso;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.correo = correo;
-        this.telefono = telefono;
-        this.password = password;
-        this.rama1 = rama1;
-        this.nro_colegio = nro_colegio;
-        this.ciudad = ciudad;
-        this.descripcion = descripcion;
-        this.numopi = numopi;
-        this.calificacion = calificacion;
-        this.verificado = verificado;
-        this.fechanac = fechanac;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getVeces_visto() {
@@ -77,6 +57,14 @@ public class Abogado  implements Serializable {
 
     public void setPeso(int peso) {
         this.peso = peso;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -109,14 +97,6 @@ public class Abogado  implements Serializable {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getRama1() {
@@ -191,20 +171,20 @@ public class Abogado  implements Serializable {
         this.paginaw = paginaw;
     }
 
-    public String getNumopi() {
-        return numopi;
-    }
-
-    public void setNumopi(String numopi) {
-        this.numopi = numopi;
-    }
-
     public float getCalificacion() {
         return calificacion;
     }
 
     public void setCalificacion(float calificacion) {
         this.calificacion = calificacion;
+    }
+
+    public float getNumopi() {
+        return numopi;
+    }
+
+    public void setNumopi(float numopi) {
+        this.numopi = numopi;
     }
 
     public boolean isVerificado() {
@@ -226,14 +206,13 @@ public class Abogado  implements Serializable {
     @Override
     public String toString() {
         return "Abogado{" +
-                "id=" + id +
-                ", veces_visto=" + veces_visto +
+                "veces_visto=" + veces_visto +
                 ", peso=" + peso +
+                ", id='" + id + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", correo='" + correo + '\'' +
                 ", telefono='" + telefono + '\'' +
-                ", password='" + password + '\'' +
                 ", rama1='" + rama1 + '\'' +
                 ", rama2='" + rama2 + '\'' +
                 ", otras_ramas='" + otras_ramas + '\'' +
@@ -243,8 +222,8 @@ public class Abogado  implements Serializable {
                 ", descripcion='" + descripcion + '\'' +
                 ", idiomas='" + idiomas + '\'' +
                 ", paginaw='" + paginaw + '\'' +
-                ", numopi='" + numopi + '\'' +
                 ", calificacion=" + calificacion +
+                ", numopi=" + numopi +
                 ", verificado=" + verificado +
                 ", fechanac=" + fechanac +
                 '}';
