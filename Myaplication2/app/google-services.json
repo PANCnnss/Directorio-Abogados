@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "84037009879",
+    "firebase_url": "https://pruebadatos-b1306.firebaseio.com",
+    "project_id": "pruebadatos-b1306",
+    "storage_bucket": "pruebadatos-b1306.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84037009879:android:13c3c6a65bcbec53",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-FWRVcEyVtvyGT7aVI9bbUsVB3uvJRRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84037009879-snh893n6bgtskfqi9kbd2nh950f3h99d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84037009879:android:351158945a8dea07",
+        "android_client_info": {
+          "package_name": "com.example.prueba_datosfb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-FWRVcEyVtvyGT7aVI9bbUsVB3uvJRRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84037009879-snh893n6bgtskfqi9kbd2nh950f3h99d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
