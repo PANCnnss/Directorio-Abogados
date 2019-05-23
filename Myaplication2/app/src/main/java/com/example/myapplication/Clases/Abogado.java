@@ -1,18 +1,25 @@
-package com.example.myapplication;
+package com.example.myapplication.Clases;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Abogado  implements Serializable {
-    private int id, veces_visto, peso;
-    private String nombre, apellido, correo, telefono, password;
+    private int  veces_visto, peso;
+    private String id,nombre, apellido, correo, telefono, password;
     private String rama1, rama2, otras_ramas, nro_colegio, fijo, ciudad;
-    private String descripcion, idiomas, paginaw, numopi;
-    private float calificacion;
+    private String descripcion;
+    private String idiomas;
+    private String paginaw;
+    private String numopi;
+    private String direccion;
+    private double calificacion;
     private boolean verificado;
     private Date fechanac;
+    private int imagen;
 
-    public Abogado(int id, int veces_visto, int peso, String nombre, String apellido, String correo, String telefono, String password, String rama1, String rama2, String otras_ramas, String nro_colegio, String fijo, String ciudad, String descripcion, String idiomas, String paginaw, String numopi, float calificacion, boolean verificado, Date fechanac) {
+    public Abogado(String id, int veces_visto, int peso, String nombre, String apellido, String correo, String telefono, String password, String rama1, String rama2, String otras_ramas, String nro_colegio, String fijo, String ciudad, String descripcion, String idiomas, String paginaw, String numopi, double calificacion, boolean verificado, Date fechanac) {
         this.id = id;
         this.veces_visto = veces_visto;
         this.peso = peso;
@@ -36,7 +43,7 @@ public class Abogado  implements Serializable {
         this.fechanac = fechanac;
     }
 
-    public Abogado(int id, int veces_visto, int peso, String nombre, String apellido, String correo, String telefono, String password, String rama1, String nro_colegio, String ciudad, String descripcion, String numopi, float calificacion, boolean verificado, Date fechanac) {
+    public Abogado(String id, int veces_visto, int peso, String nombre, String apellido, String correo, String telefono, String password, String rama1, String nro_colegio, String ciudad, String descripcion, String numopi, double calificacion, boolean verificado, Date fechanac) {
         this.id = id;
         this.veces_visto = veces_visto;
         this.peso = peso;
@@ -55,11 +62,72 @@ public class Abogado  implements Serializable {
         this.fechanac = fechanac;
     }
 
-    public int getId() {
+    public Abogado(String id, String nombre, String correo, String telefono, String rama1,
+                   String ciudad,double calificacion, int imagen) {
+        this.id = id;
+        this.ciudad = ciudad;
+        this.nombre = nombre;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.rama1 = rama1;
+        this.calificacion = calificacion;
+        this.imagen = imagen;
+    }
+    public Abogado(){
+
+    }
+    public void set1Abogado(String nombre, String apellido, String correo, String telefono, String password, Date FecNac) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.password = password;
+        this.fechanac = FecNac;
+    }
+
+    public void set2Abogado(String rama1, String rama2, String nro_colegio, String ciudad, String descripcion, String idiomas, String paginaw) {
+        this.rama1 = rama1;
+        this.rama2 = rama2;
+        this.nro_colegio = nro_colegio;
+        this.ciudad = ciudad;
+        this.descripcion = descripcion;
+        this.idiomas = idiomas;
+        this.paginaw = paginaw;
+    }
+    public void firstSignUp(String nombre,String apellido,String fecha,String celular,String correo,String password)  {
+        setNombre(nombre);
+        setApellido(apellido);
+        try {
+            setFechanac(new SimpleDateFormat("dd/MM/yyyy").parse(fecha));
+        }
+        catch (Exception es){};
+        setTelefono(celular);
+        setCorreo(correo);
+        setPassword(password);
+    }
+    public void secondSignUp(String rama1,String rama2,String idiomas,String nro_colegio,String descripcion,String direccion,String ciudad,String paginaw){
+        setRama1(rama1);
+        setRama2(rama2);
+        setIdiomas(idiomas);
+        setNro_colegio(nro_colegio);
+        setDescripcion(descripcion);
+        setDireccion(direccion);
+        setCiudad(ciudad);
+        setPaginaw(paginaw);
+
+    }
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String  id) {
         this.id = id;
     }
 
@@ -199,11 +267,11 @@ public class Abogado  implements Serializable {
         this.numopi = numopi;
     }
 
-    public float getCalificacion() {
+    public double getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(float calificacion) {
+    public void setCalificacion(double calificacion) {
         this.calificacion = calificacion;
     }
 
@@ -223,6 +291,12 @@ public class Abogado  implements Serializable {
         this.fechanac = fechanac;
     }
 
+    public int getImagen(){
+        return imagen;
+    }
+    public void setImagen(int imagen){
+        this.imagen=imagen;
+    }
     @Override
     public String toString() {
         return "Abogado{" +

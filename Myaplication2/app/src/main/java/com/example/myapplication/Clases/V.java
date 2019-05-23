@@ -1,11 +1,11 @@
-package com.example.myapplication;
+package com.example.myapplication.Clases;
 
 import android.support.design.widget.TextInputLayout;
 import android.util.Log;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import com.example.myapplication.Utils;
+import com.example.myapplication.Clases.Utils;
 public class V {
     final static String DATE_FORMAT = "dd/MM/yyyy";
     public static String getText(TextInputLayout ti){
@@ -30,6 +30,20 @@ public class V {
         ti.setError(err);
         return  b;
     }
+    public static boolean isEmpty(TextInputLayout ti,String err){
+        if (getText(ti).length()==0) ti.setError(err);
+        else {
+            ti.setError(null);
+            return false;
+        }
+        return true;
+    }
+    public static boolean validOnlyTextComma(TextInputLayout ti,String err,int min, int max){
+        boolean b=validOnlyText(getText(ti).replace(",",""),min,max);
+        if (b) err=null;
+        ti.setError(err);
+        return  b;
+    }
 
     public static boolean validEmail(TextInputLayout ti,String err){
         boolean b=validEmail(getText(ti));
@@ -41,10 +55,9 @@ public class V {
         return (s.matches("[a-z0-9_-]{6,16}"));
     }
     public static boolean validOnlyText(String s,int min,int max) {
-
+        if (s.length()==0) return false;
         String regex="[A-Za-zÑñáéíóúÁÉÍÓÚ ]*";
         if (min!=-1) regex+="{"+min+","+max+"}";
-        Log.e("errors",regex);
         return (s.matches(regex));
     }
     public static boolean validNumber(String s,int min,int max) {

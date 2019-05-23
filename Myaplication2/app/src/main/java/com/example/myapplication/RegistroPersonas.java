@@ -1,31 +1,25 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.Clases.Cliente;
+import com.example.myapplication.Clases.FireStore;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import java.util.concurrent.Executor;
 
 public class RegistroPersonas extends AppCompatActivity {
     TextInputLayout tfnom,tfapelli,tfcorreo,tfpass,tfrepass;
@@ -35,9 +29,6 @@ public class RegistroPersonas extends AppCompatActivity {
     ProgressDialog pd;
     private static final String TAG="Main_act";
     Cliente cregistro;
-    Button btsignup;
-    EditText edtcorr, edtcontra;
-    TextView tvestado;
     Bundle bundle;
     private String corr, contra;
     @SuppressLint("MissingPermission")
@@ -68,12 +59,14 @@ public class RegistroPersonas extends AppCompatActivity {
     }
     private void createUser(){
         if(!validar()) {toastMsg("Datos Incorrectos ("+ corr + "," + contra + ")",1); return;};
+
         mAuth.createUserWithEmailAndPassword(corr,contra).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Task<Void> res=FireStore.registrar(RegistroPersonas.this, cregistro, "Clientes",corr,pd);
-                    regDatosAdicio(res);                }
+                    Task<Void> res= FireStore.registrar(RegistroPersonas.this, cregistro, "Clientes",corr,pd);
+                    regDatosAdicio(res);
+                }
                 else {
                     pd.dismiss();
                     toastMsg("No se pudo crear usuario");
@@ -133,6 +126,7 @@ public class RegistroPersonas extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
+                    pd.dismiss();
                     toastMsg("Usuario Registrado Correctamente");
                     finish();
                     tomainAct();

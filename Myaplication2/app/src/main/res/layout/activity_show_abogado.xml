@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="10"
+    android:fitsSystemWindows="true"
+    tools:context=".showAbogado">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:background="@color/Colorbtn"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:toolbarId="@+id/toolbar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                app:layout_anchorGravity="bottom|end"
+                android:onClick="sendMessage"
+                app:srcCompat="@android:drawable/ic_dialog_email" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/iconoscli"
+                    android:id="@+id/saivabg"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/normal"
+                    android:contentDescription="nombre Abogado" />
+
+                <TextView
+                    android:id="@+id/txnom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Nombre"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:textSize="48sp" />
+            </LinearLayout>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:layout_weight="10"
+            android:layout_height="0dp">
+            <TextView
+                android:id="@+id/txdcor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/sacorr"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txcor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="@string/defcorr"
+                android:textColor="@color/Colorbtn"
+                android:textSize="24sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:layout_weight="10"
+            android:layout_height="0dp">
+            <TextView
+                android:id="@+id/txdtel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/satel"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/txtel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="@string/deftel"
+                android:textSize="24sp"
+                android:textColor="@color/design_default_color_primary_dark"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:layout_weight="10"
+            android:layout_height="0dp">
+            <TextView
+                android:id="@+id/txdram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/sarama"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/txrama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Laboral"
+                android:textSize="24sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:layout_weight="10"
+            android:layout_height="0dp">
+            <TextView
+                android:id="@+id/txdciud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginLeft="8dp"
+                android:text="@string/saciud"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/txciud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Arequipa"
+                android:textSize="24sp"
+                />
+        </LinearLayout>
+        <RatingBar
+            android:id="@+id/rbcal"
+            android:layout_width="@dimen/fstarswidth"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

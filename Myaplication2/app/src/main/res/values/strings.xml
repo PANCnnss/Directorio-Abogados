@@ -14,7 +14,7 @@
     <string name="siguiente">SIGUIENTE</string>
     <string name="infoprof">Información Profesional</string>
     <string name="ramap">Rama Principal</string>
-    <string name="ramas">Rama Secundaria</string>
+    <string name="ramas">Ramas Secundarias</string>
     <string name="idioma">Idiomas</string>
     <string name="numesc">Numero de Escuela</string>
     <string name="desc">Descripción</string>
@@ -22,4 +22,34 @@
     <string name="ciudad">Ciudad</string>
     <string name="web">Página web</string>
     <string name="selecImg">Seleccionar Imagen</string>
+    <string-array name="ramas">
+        <item>Penal</item>
+        <item>Administrativa</item>
+    </string-array>
+    <string-array name="idiomas">
+        <item>Inglés</item>
+        <item>Francés</item>
+        <item>Alemán</item>
+    </string-array>
+    <string-array name="ciudade">
+        <item>Arequipa</item>
+        <item>Lima</item>
+        <item>Cuzco</item>
+    </string-array>
+    <string name="insec">Iniciar sesión</string>
+    <string name="nav_header_desc">Imagen de referencia</string>
+    <string name="nav_header_title">Layers</string>
+    <string name="nav_header_subtitle">Aplicación para abogado</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">cerrar</string>
+    <string name="defciud">Arequipa</string>
+    <string name="defram">Civil</string>
+    <string name="defnom">Juan Arnoldo</string>
+    <string name="sacorr">Correo: </string>
+    <string name="satel">Teléfono: </string>
+    <string name="sarama">Rama:</string>
+    <string name="saciud">Ciudad:</string>
+    <string name="deftel">975268452</string>
+    <string name="defcorr">Abogado@mail.com</string>
+    <string name="mainacthero">Búsqueda de Abogados</string>
 </resources>

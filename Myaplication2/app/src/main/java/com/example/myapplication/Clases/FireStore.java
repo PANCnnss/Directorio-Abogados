@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Clases;
 
 import android.app.ProgressDialog;
 import android.support.annotation.NonNull;

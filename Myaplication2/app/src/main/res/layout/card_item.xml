@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="10"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp">
+    <RelativeLayout
+        android:background="@color/Colorbtn"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_alignParentLeft="true"
+
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:id="@+id/dimg"
+            android:layout_weight="1"
+            android:src="@drawable/iconoscli"
+            android:layout_width="@dimen/thumb"
+            android:layout_height="@dimen/thumb" />
+        <TextView
+            android:id="@+id/dnom"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/dimg"
+            android:text="@string/defnom"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/dram"
+            android:text="@string/defram"
+            android:layout_toRightOf="@+id/dimg"
+            android:layout_below="@+id/dnom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@string/defciud"
+            android:layout_toRightOf="@+id/dimg"
+            android:layout_below="@+id/dram"
+            android:textColor="@color/white"
+            android:id="@+id/dciud"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RatingBar
+            android:layout_toRightOf="@+id/dimg"
+            android:layout_below="@+id/dciud"
+            android:progressBackgroundTint="@color/plomo"
+            android:progressTint="@color/white"
+            android:id="@+id/dcal"
+            android:layout_width="@dimen/fstarswidth"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
