@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.myapplication.Clases.Abogado;
 import com.example.myapplication.R;
@@ -20,6 +21,7 @@ public class AbogadoAdapter extends RecyclerView.Adapter<AbogadoViewHolder> {
     public AbogadoAdapter(Vector<Abogado> abogs) {
         this.abogs = abogs;
         itviews = new Vector<View>();
+
     }
 
     @NonNull
@@ -28,6 +30,7 @@ public class AbogadoAdapter extends RecyclerView.Adapter<AbogadoViewHolder> {
         final View itemView = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.card_item, viewGroup,false);
         itviews.add(itemView);
+        Log.d("Deb", "Creando el Holder");
         return new AbogadoViewHolder(itemView);
     }
 

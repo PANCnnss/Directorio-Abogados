@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.widget.Toast;
+
 import com.example.myapplication.Clases.Abogado;
 import com.example.myapplication.Clases.Adapters.AbogadoAdapter;
 
@@ -25,15 +28,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Log.d("Vect","entre pto");
         RecyclerView rv = findViewById(R.id.rvCon);
 
         //Data Creation
         va = new Vector<Abogado>();
+
         for(int i=0; i<vnoms.length;i++){
             va.add(new Abogado(""+(i+1), vnoms[i], vcorrs[i], vtels[i], vramas[i],
                     "Arequipa",vcals[i],imgs[i]));
-            //Log.d("Vect",va.get(i).toString());
+            Log.d("Vect",va.get(i).toString());
+            Toast.makeText(this,"entre",Toast.LENGTH_SHORT).show();
         }
 
 
@@ -42,5 +47,6 @@ public class MainActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setAdapter(new AbogadoAdapter(va));
         rv.setLayoutManager(llm);
+
     }
 }

@@ -16,6 +16,7 @@
         </activity>
         <activity android:name=".RegistroAbogados2" android:theme="@style/MyTheme" />
         <activity android:name=".Registrar_Abogados" android:theme="@style/MyTheme" />
+        <activity android:name=".showAbogado" android:theme="@style/MyTheme" />
         <activity android:name=".RegistroPersonas" />
         <activity android:name=".Login">
             <intent-filter>

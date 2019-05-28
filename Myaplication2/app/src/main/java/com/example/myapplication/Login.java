@@ -47,7 +47,8 @@ public class Login extends AppCompatActivity {
         btsignin = findViewById(R.id.btsignin);
         edtcontra = findViewById(R.id.etcontra);
         edtcorr = findViewById(R.id.etuser);
-
+        edtcorr.setText("j@aj.com");
+        edtcontra.setText("123456");
         mAuth = FirebaseAuth.getInstance();
         pb = new ProgressDialog(this);
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
