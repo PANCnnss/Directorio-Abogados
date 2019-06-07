@@ -16,7 +16,7 @@
     <string name="ramap">Rama Principal</string>
     <string name="ramas">Ramas Secundarias</string>
     <string name="idioma">Idiomas</string>
-    <string name="numesc">Numero de Escuela</string>
+    <string name="numesc">Número de Colegiatura</string>
     <string name="desc">Descripción</string>
     <string name="dir">Dirección</string>
     <string name="ciudad">Ciudad</string>
@@ -52,4 +52,6 @@
     <string name="deftel">975268452</string>
     <string name="defcorr">Abogado@mail.com</string>
     <string name="mainacthero">Búsqueda de Abogados</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="action_settings">Settings</string>
 </resources>

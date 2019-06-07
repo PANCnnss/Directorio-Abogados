@@ -3,7 +3,7 @@
     package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,11 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SubirFoto" android:theme="@style/MyTheme">
-        </activity>
-        <activity android:name=".RegistroAbogados2" android:theme="@style/MyTheme" />
-        <activity android:name=".Registrar_Abogados" android:theme="@style/MyTheme" />
-        <activity android:name=".showAbogado" android:theme="@style/MyTheme" />
+        <activity android:name=".Probando"></activity>
+        <activity
+            android:name=".SubirFoto"
+            android:theme="@style/MyTheme" />
+        <activity
+            android:name=".RegistroAbogados2"
+            android:theme="@style/MyTheme" />
+        <activity
+            android:name=".Registrar_Abogados"
+            android:theme="@style/MyTheme" />
+        <activity
+            android:name=".showAbogado"
+            android:theme="@style/MyTheme" />
         <activity android:name=".RegistroPersonas" />
         <activity android:name=".Login">
             <intent-filter>

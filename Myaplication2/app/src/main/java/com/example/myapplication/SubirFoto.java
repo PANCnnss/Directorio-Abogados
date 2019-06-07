@@ -1,5 +1,4 @@
 package com.example.myapplication;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
